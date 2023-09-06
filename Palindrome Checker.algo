@@ -1,0 +1,35 @@
+program PalindromeChecker;
+
+var
+  word: string;
+  i, j: integer;
+  isPalindrome: boolean;
+
+begin
+//type the word
+  writeln('Enter a word: ');
+  readln(word);
+  
+  // Initialize variables
+  i := 1;
+  j := Length(word);
+  isPalindrome := true;
+
+  // Check if the word is a palindrome
+  while (i < j) do
+  begin
+    if (word[i] <> word[j]) then
+    begin
+      isPalindrome := false;
+      break; // Exit the loop if a mismatch is found
+    end;
+    i:=i+1;
+    j:=j-1;
+  end;
+
+  // Output the result
+  if isPalindrome then
+    writeln(word, ' is a palindrome.')
+  else
+    writeln(word, ' is not a palindrome.');
+end.
